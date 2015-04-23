@@ -1,1 +1,0 @@
-## PIERWSZY STAR POLECIAŁ!!!

@@ -1,0 +1,20 @@
+{
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "nginx",
+    "network": "BRIDGE"
+    }
+  },
+  "id": "nginx",
+  "instances": 1,
+  "healthChecks": [
+    {
+        "protocol": "HTTP",
+        "portIndex": 0,
+        "timeoutSeconds": 5,
+        "maxConsecutiveFailures": 3
+    }
+  ]
+}
+
