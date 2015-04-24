@@ -1,10 +1,10 @@
 {
-    "id": "nginx26335",
+    "id": "nginx-app",
     "instances": 1,
     "container": {
         "type": "DOCKER",
         "docker": {
-            "image": "nginx",
+            "image": "docker.touk.pl/nginx-app",
             "network": "BRIDGE",
             "portMappings": [
                 {
@@ -15,7 +15,7 @@
             ]
         }
     },
-    "cpus": 0.01,
+    "cpus": 0.1,
     "healthChecks": [
         {
             "protocol": "HTTP",
