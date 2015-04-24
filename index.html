@@ -163,6 +163,44 @@
           </section>
         </section>
 
+				<section>
+				  <section data-markdown data-background="#004562">
+            ```
+while true; do
+  DIG=`dig @mesos-dns +short SRV _nginx-app._tcp.marathon.mesos | \
+       awk 'BEGIN { FS= " "}; { print $4":"$3 }' | sort`
+
+  echo $DIG > /tmp/dig
+
+  if ! diff /tmp/dig /tmp/dig_last; then
+    sed -i.bak '2,$d' $CONF
+    for i in $DIG; do
+      echo -e "\tserver $i;\n" >> $CONF
+    done
+    echo "}" >> $CONF
+
+    kill -HUP `pgrep -o nginx`
+
+    echo $DIG > /tmp/dig_last
+  fi
+  sleep 1
+done
+            ```
+          </section>
+				</section>
+
+				<section>
+          <section data-background="#004562">
+            <h1>Let's deploy</h1>
+          </section>
+				</section>
+
+				<section>
+          <section data-background="#004562">
+            <h1>Thanks!</h1>
+          </section>
+				</section>
+
 			</div>
 
 		</div>
