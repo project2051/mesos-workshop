@@ -82,13 +82,34 @@
 
 				<section>
           <section data-background="#004562">
+            <img width="60%" data-src="docker.png">
+          </section>
+				</section>
+
+				<section>
+          <section data-background="#004562">
             <img width="40%" data-src="app-state.png">
           </section>
 				</section>
 
+        <section>
+          <section data-background="#004562">
+          <h4>In combination wiht some effort mesos can replace existing infrastructure making it more:</h4>
+          <ul>
+            <span class="fragment"><li>manageable</li></span>
+            <span class="fragment"><li>efficient</li></span>
+            <span class="fragment"><li>easier to access</li></span>
+            <span class="fragment"><li>fault-tolerant</li></span>
+            <span class="fragment"><li>scalable</li></span>
+          </ul>
+          </section>
+        </section>
+
 				<section data-markdown data-background="#004562">
 						```
 {
+    "id": "nginx",
+    "instances": 1,
     "container": {
         "type": "DOCKER",
         "docker": {
@@ -103,8 +124,6 @@
             ]
         }
     },
-    "id": "nginx",
-    "instances": 1,
     "healthChecks": [
         {
             "protocol": "HTTP",
@@ -115,6 +134,12 @@
     ]
 }
 						```
+				</section>
+
+				<section>
+          <section data-background="#004562">
+            <h1>Let's deploy</h1>
+          </section>
 				</section>
 
 			</div>
@@ -134,7 +159,7 @@
 				history: true,
 				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'zoom', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [

@@ -3,7 +3,14 @@
     "type": "DOCKER",
     "docker": {
       "image": "nginx",
-    "network": "BRIDGE"
+    "network": "BRIDGE",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 0,
+                    "protocol": "tcp"
+                }
+            ]
     }
   },
   "id": "nginx",
